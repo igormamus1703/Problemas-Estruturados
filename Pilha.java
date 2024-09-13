@@ -7,14 +7,14 @@ public class Pilha {
         this.topo = null;
     }
 
-    // Método para adicionar uma solicitação ao histórico (push)
+    // Método para adicionar uma solicitação ao histórico (PUSH)
     public void push(Solicitacao solicitacao) {
         Node novoNode = new Node(solicitacao);
         novoNode.proximo = topo;
         topo = novoNode;
     }
 
-    // Método para remover uma solicitação do histórico (pop)
+    // Método para remover uma solicitação do histórico (POP)
     public Solicitacao pop() {
         if (isEmpty()) {
             System.out.println("Histórico vazio!");

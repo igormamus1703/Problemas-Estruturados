@@ -10,7 +10,7 @@ public class Fila {
     }
 
     // Método para adicionar um cliente à fila
-    public void enqueue(Cliente cliente) {
+    public void adicionarClienteNaFila(Cliente cliente) { 
         Node novoNode = new Node(cliente);
         if (isEmpty()) {
             frente = tras = novoNode;
@@ -20,8 +20,8 @@ public class Fila {
         }
     }
 
-    // Método para atender o próximo cliente (dequeue)
-    public Cliente dequeue() {
+    // Método para atender o próximo cliente
+    public Cliente atenderProximoCliente() {  
         if (isEmpty()) {
             System.out.println("Fila de atendimento vazia!");
             return null;
@@ -40,7 +40,7 @@ public class Fila {
     }
 
     // Método para exibir a fila de atendimento
-    public void mostrarFila() {
+    public void exibirFila() {  
         if (isEmpty()) {
             System.out.println("Fila de atendimento vazia!");
             return;
@@ -52,5 +52,3 @@ public class Fila {
         }
     }
 }
-    
-

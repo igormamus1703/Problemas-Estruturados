@@ -23,7 +23,7 @@ public class SistemaAtendimento {
         };
 
         for (Cliente cliente : clientes) {
-            filaAtendimento.enqueue(cliente);
+            filaAtendimento.adicionarClienteNaFila(cliente); 
         }
 
         // Inicializando o histórico de solicitações com os dados fornecidos
@@ -47,16 +47,16 @@ public class SistemaAtendimento {
         int opcao;
         do {
             System.out.println("Sistema de Gerenciamento de Atendimento ao Cliente");
-            System.out.println("1. Adicionar solicitação ao histórico");
-            System.out.println("2. Remover solicitação do histórico");
+            System.out.println("1. Registrar nova solicitação no histórico");  
+            System.out.println("2. Remover a última solicitação do histórico");  
             System.out.println("3. Exibir histórico de solicitações");
-            System.out.println("4. Adicionar cliente à fila de atendimento");
+            System.out.println("4. Registrar novo cliente na fila de atendimento");  
             System.out.println("5. Atender próximo cliente");
             System.out.println("6. Exibir fila de atendimento");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine();  // Consumir a quebra de linha
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1:
@@ -95,13 +95,13 @@ public class SistemaAtendimento {
                     String nomeCliente = scanner.nextLine();
                     System.out.print("Digite o motivo do atendimento: ");
                     String motivoAtendimento = scanner.nextLine();
-                    filaAtendimento.enqueue(new Cliente(idCliente, nomeCliente, motivoAtendimento));
+                    filaAtendimento.adicionarClienteNaFila(new Cliente(idCliente, nomeCliente, motivoAtendimento));
                     System.out.println("Cliente adicionado à fila de atendimento.");
                     break;
 
                 case 5:
                     // Atender próximo cliente
-                    Cliente clienteAtendido = filaAtendimento.dequeue();
+                    Cliente clienteAtendido = filaAtendimento.atenderProximoCliente();  
                     if (clienteAtendido != null) {
                         System.out.println("Cliente atendido: " + clienteAtendido);
                     } else {
@@ -112,7 +112,7 @@ public class SistemaAtendimento {
                 case 6:
                     // Exibir fila de atendimento
                     System.out.println("Fila de atendimento:");
-                    filaAtendimento.mostrarFila();
+                    filaAtendimento.exibirFila();  
                     break;
 
                 case 0:
