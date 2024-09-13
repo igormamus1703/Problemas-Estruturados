@@ -1,3 +1,5 @@
+package gerenciadordeatendimentoaocliente;
+
 class Node {
     Object elemento;
     Node proximo;

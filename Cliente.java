@@ -1,3 +1,5 @@
+package gerenciadordeatendimentoaocliente;
+
 public class Cliente {
     String idCliente;        // ID do cliente
     String nome;             // Nome do cliente

@@ -1,3 +1,5 @@
+package gerenciadordeatendimentoaocliente;
+
 class Solicitacao {
     String idSolicitacao;    // ID da solicitação
     String descricao;        // Descrição da solicitação
